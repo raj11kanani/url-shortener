@@ -53,7 +53,7 @@ func shortenHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	response := map[string]string{
-		"short_url": fmt.Sprintf("http://localhost:8080/%s", code),
+		"short_url": fmt.Sprintf("%s/%s", getEnv("APP_URL", "http://localhost:8080"), code),
 		"code":      code,
 	}
 
